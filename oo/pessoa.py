@@ -9,13 +9,17 @@ class Pessoa:
 
 
 if __name__ == '__main__':
-    Rodrigo = Pessoa(nome='Sadamassa')
-    Sada = Pessoa(Rodrigo, nome='Sada')
-    print(Pessoa.cumprimentar(Sada))
-    print(id(Sada))
-    print(Sada.cumprimentar())
-    print(Sada.nome)
-    print(Sada.idade)
-    for filho in Sada.filhos:
+    Sadamassa = Pessoa(nome='Sadamassa')
+    Rodrigo = Pessoa(Sadamassa, nome='Rodrigo')
+    print(Pessoa.cumprimentar(Rodrigo))
+    print(id(Rodrigo))
+    print(Rodrigo.cumprimentar())
+    print(Rodrigo.nome)
+    print(Rodrigo.idade)
+    for filho in Rodrigo.filhos:
         print(filho.nome)
+    Rodrigo.sobrenome = "Higa"
+    del Rodrigo.filhos
+    print(Rodrigo.__dict__)
+    print(Sadamassa.__dict__)
 
