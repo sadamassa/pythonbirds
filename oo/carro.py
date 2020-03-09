@@ -1,3 +1,6 @@
+
+
+
 """"
 exercicio com a classe carro com os seguintes atributos
 
@@ -19,6 +22,7 @@ Ela oferece os eguintes atributos:
   N
 O   L
   S
+
 
     Exemplo:
     >>> # Testando motor
@@ -92,3 +96,16 @@ O   L
     >>> carro.calcular_direcao()
     >>> 'Oeste'
 """
+class Motor:
+    def __init__(self):
+        self.velocidade = 0
+
+    def acelerar(self):
+        self.velocidade += 1
+
+    def frear(self):
+        self.velocidade -=2
+        self.velocidade = max(0, self.velocidade)
+
+
+
