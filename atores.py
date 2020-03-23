@@ -125,8 +125,8 @@ class Passaro(Ator):
         """
         if self._esta_voando():
             delta_t=tempo-self._tempo_de_lancamento
-            self.calcular_posicao_vertical(delta_t)
-            self.calcular_posicao_horizontal(delta_t)
+            self._calcular_posicao_vertical(delta_t)
+            self._calcular_posicao_horizontal(delta_t)
         return super().calcular_posicao(tempo)
 
 
@@ -156,7 +156,7 @@ class Passaro(Ator):
         self.x = x_atual
 
     def _esta_voando(self):
-        return .foi_lancado() and self.status == ATIVO
+        return self.foi_lancado() and self.status == ATIVO
 
 
 class PassaroAmarelo(Passaro):
